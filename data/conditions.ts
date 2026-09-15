@@ -436,6 +436,26 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			}
 		},
 	},
+	metronomeforce: {
+    name: 'metronomeforce',
+    duration: 1, // Solo dura 1 turno
+    onStart(pokemon) {
+        this.add('-start', pokemon, 'Metronome Force');
+    },
+    onEnd(pokemon) {
+        this.add('-end', pokemon, 'Metronome Force');
+    },
+    
+    // Este evento se dispara cuando el Pokémon intenta seleccionar un movimiento
+    // Deshabilita todos los movimientos excepto Metrónomo
+    onDisableMove(pokemon) {
+        for (const moveSlot of pokemon.moveSlots) {
+            if (moveSlot.id !== 'metronome') {
+                pokemon.disableMove(moveSlot.id);
+            }
+        }
+    },
+	},
 	stall: {
 		// Protect, Detect, Endure counter
 		name: 'stall',
