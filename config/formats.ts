@@ -48,7 +48,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
     name: "[Gen 9] Metronome Intermediate",
     desc: "The first turn a Pokemon is Switch In must use Metronome",
-    mod: 'gen9',
+    mod: 'metronomeforce',
     ruleset: ['Standard', 'Metronome Force'],
     banlist: ['Uber', 'AG', 'Baton Pass'],
 	},

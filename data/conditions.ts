@@ -436,6 +436,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			}
 		},
 	},
+	
 	metronomeforce: {
     name: 'metronomeforce',
     duration: 1, // Solo dura 1 turno

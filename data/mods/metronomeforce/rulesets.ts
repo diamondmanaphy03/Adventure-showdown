@@ -14,7 +14,7 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
     
 	    onValidateTeam(team) {
         for (const set of team) {
-            const hasMetronome = set.moves.some(m => m.valueOf() === 'metronome');
+            const hasMetronome = set.moves.some(m => m.valueOf() === 'Metronome');
             if (!hasMetronome) {
                 return [`${set.name} debe llevar Metrónomo.`];
             }
