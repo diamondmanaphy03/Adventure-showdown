@@ -46,7 +46,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     banlist: ['Uber', 'AG', 'Baton Pass'],
 	},
 	{
-    name: "[Gen 9] Metronome Intermediate",
+    name: "[Gen 9] Metronome Force",
     desc: "The first turn a Pokemon is Switch In must use Metronome",
     mod: 'metronomeforce',
     ruleset: ['Standard', 'Metronome Force'],

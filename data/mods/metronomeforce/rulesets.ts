@@ -12,14 +12,18 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
         name: 'Metronome Force',
         desc: "Todos los Pokémon deben usar Metrónomo en su primer turno activo.",
     
-	    onValidateTeam(team) {
-        for (const set of team) {
+            onValidateSet(set, format, setHas, teamHas) {
+            const species = this.dex.species.get(set.species);
+            const problems = [];
+            
+            // Verificar que Metrónomo esté en el moveset
             const hasMetronome = set.moves.some(m => m.valueOf() === 'Metronome');
             if (!hasMetronome) {
-                return [`${set.name} debe llevar Metrónomo.`];
+                problems.push(`${set.name || species.name} debe llevar Metrónomo.`);
             }
-        }
-	    },
+            
+            if (problems.length) return problems;
+        },
 
         onBegin() {
             this.add('rule', 'Metronome Force: primer turno = Metrónomo obligatorio');
