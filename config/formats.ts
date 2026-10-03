@@ -45,7 +45,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
     ruleset: ['Standard', 'Not Very Effective Mod'],
     banlist: ['Uber', 'AG', 'Baton Pass'],
 	},
-	
+	{
+    name: "[Gen 9] Metronome Force",
+    desc: "Each Pokémon must use Metronome on their first turn after entering the field.",
+    mod: 'metronomeforce',  // <-- Usa tu mod personalizado
+    ruleset: ['Standard', 'Metronome Force Mod'],
+    banlist: ['Uber', 'AG', 'Baton Pass'],
+	},
+
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
 
