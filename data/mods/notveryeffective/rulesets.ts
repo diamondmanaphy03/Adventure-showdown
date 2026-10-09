@@ -9,20 +9,18 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 	///////////////////////////////////////////////////////////////////
 	notveryeffectivemod: {
 		inherit: true,
-        effectType: 'Rule',
-        name: 'Not Very Effective Mod',
-        desc: "All damaging moves are not very effective.",
-        onNegateImmunity: false,
-        onBegin() {
-            this.add('rule', 'Not Very Effective Mod: All damaging moves are not very effective!');
-        },
-        onEffectivenessPriority: 1,
-        onEffectiveness(typeMod, target, type, move) {
-            if (move && move.category === 'Status') return;
-            if (move && !this.dex.getImmunity(move, type)) return -1;
-            return -1;
-        },
-    },
-	
-	
+		effectType: 'Rule',
+		name: 'Not Very Effective Mod',
+		desc: "All damaging moves are not very effective.",
+		onNegateImmunity: false,
+		onBegin() {
+			this.add('rule', 'Not Very Effective Mod: All damaging moves are not very effective!');
+		},
+		onEffectivenessPriority: 1,
+		onEffectiveness(typeMod, target, type, move) {
+			if (move && move.category === 'Status') return;
+			if (move && !this.dex.getImmunity(move, type)) return -1;
+			return -1;
+		},
+	},
 };
