@@ -5703,4 +5703,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -3,
 	},
+	regresionprimigenia: {
+		onStart(source) {
+			this.field.addPseudoWeather('trickroom');
+		},
+		flags: {},
+		name: "Regresión Primigenia",
+		rating: 4.5,
+		num: -100,
+	},
 };

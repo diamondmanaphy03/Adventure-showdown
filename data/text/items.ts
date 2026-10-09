@@ -2624,4 +2624,8 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Vile Vial",
 		shortDesc: "If held by a Venomicon, its Poison- and Flying-type attacks have 1.2× power.",
 	},
+	tyrantrumite: {
+    name: "Tyrantrumite",
+    desc: "Si Tyrantrum lleva este objeto, puede megaevolucionar en combate.",
+	},
 };
