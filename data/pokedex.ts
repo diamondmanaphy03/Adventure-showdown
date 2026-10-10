@@ -13089,6 +13089,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoLevel: 39,
 		evoCondition: "during the day",
 		eggGroups: ["Monster", "Dragon"],
+		otherFormes: ["Tyrantrum-Mega"],
+		formeOrder: ["Tyrantrum", "Tyrantrum-Mega"],
 	},
 	tyrantrummega: {
 		num: 697,

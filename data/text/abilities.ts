@@ -2319,7 +2319,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		activate: "  {POKEMON} extends {MOVE} by 2 turns!",
 	},
 	regresionprimigenia: {
-		name: "Regresión Primigenia",
+		name: "Regresion Primigenia",
 		shortDesc: "Al entrar al combate, este Pokémon invoca Espacio Raro.",
 		desc: "Al entrar al combate, este Pokémon invoca Espacio Raro, que invierte el orden de velocidad durante 5 turnos.",
 	},
