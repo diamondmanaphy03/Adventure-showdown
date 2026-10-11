@@ -25,6 +25,20 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Prof"
 	},
 	{
+		name: "POKEMON BERGASTADIUM",
+		desc: 'TIIIO ESTO ES POKEMON BERGASTADIUM',
+		mod: 'gen9',
+		ruleset: ['Standard'],
+		banlist: [
+			'Restricted Legendary', 'Mythical', 'Articuno', 'Zapdos', 'Moltres', 'Entei', 'Raikou', 'Suicune', 'Regice', 'Registeel',
+			'Regirock', 'Latios', 'Latias', 'Heatran', 'Cresselia', 'Regigigas', 'Uxie', 'Mesprit', 'Azelf', 'Cobalion', 'Terrakion',
+			'Virizion', 'Articuno-Galar', 'Zapdos-Galar', 'Moltres-Galar', 'Tornadus', 'Thundurus', 'Landorus', 'Type: Null', 'Silvally',
+			'Tapu Koko', 'Tapu Lele', 'Tapu Bulu', 'Tapu Fini', 'Kubfu', 'Urshifu', 'Glastrier', 'Spectrier', 'Regieleki', 'Regidrago',
+			'Enamorus', 'Ogerpon', 'Wo-Chien', 'Chien-Pao', 'Ting-Lu', 'Chi-Yu', 'Okidogi', 'Munkidori', 'Fezandipiti', 'Shedinja',
+			'Salamence', 'Walking Wake', 'Gouging Fire', 'Raging Bolt', 'Iron Leaves', 'Iron Boulder', 'Iron Crown',
+		],
+	},
+	{
     name: "[Gen 9] Super Effective",
     desc: "All damaging moves are super effective!",
     mod: 'supereffective',  // <-- Usa tu mod personalizado
