@@ -4039,6 +4039,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 		natDexTier: "RU",
 	},
+	tyrantrummega: {
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "UUBL",
+	},
 	amaura: {
 		isNonstandard: "Past",
 		tier: "Illegal",

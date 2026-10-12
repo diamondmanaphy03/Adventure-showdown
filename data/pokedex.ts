@@ -5110,6 +5110,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Red",
 		prevo: "Combusken",
 		evoLevel: 36,
+		tags: ["Bergaliga"],
 		eggGroups: ["Field"],
 		otherFormes: ["Blaziken-Mega"],
 		formeOrder: ["Blaziken", "Blaziken-Mega"],
@@ -8162,6 +8163,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		prevo: "Gabite",
 		evoLevel: 48,
+		tags: ["Bergaliga"],
 		eggGroups: ["Monster", "Dragon"],
 		otherFormes: ["Garchomp-Mega", "Garchomp-Mega-Z"],
 		formeOrder: ["Garchomp", "Garchomp-Mega", "Garchomp-Mega-Z"],
@@ -10393,6 +10395,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Darumaka-Galar",
 		evoType: "useItem",
 		evoItem: "Ice Stone",
+		tags: ["Bergaliga"],
 		eggGroups: ["Field"],
 	},
 	darmanitangalarzen: {
@@ -10406,6 +10409,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.7,
 		weightkg: 120,
 		color: "White",
+		tags: ["Bergaliga"],
 		eggGroups: ["Field"],
 		requiredAbility: "Zen Mode",
 		battleOnly: "Darmanitan-Galar",
@@ -10982,6 +10986,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "White",
 		prevo: "Foongus",
 		evoLevel: 39,
+		tags: ["Bergaliga"],
 		eggGroups: ["Grass"],
 	},
 	frillish: {
@@ -13089,6 +13094,23 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoLevel: 39,
 		evoCondition: "during the day",
 		eggGroups: ["Monster", "Dragon"],
+		otherFormes: ["Tyrantrum-Mega"],
+		formeOrder: ["Tyrantrum", "Tyrantrum-Mega"],
+	},
+	tyrantrummega: {
+		num: 697,
+		name: "Tyrantrum-Mega",
+		baseSpecies: "Tyrantrum",
+		forme: "Mega",
+		types: ["Rock", "Dragon"],
+		baseStats: { hp: 82, atk: 171, def: 139, spa: 49, spd: 119, spe: 31 },
+		abilities: { 0: "Regresion Primigenia" },
+		heightm: 2.5,
+		weightkg: 290,
+		color: "Red",
+		eggGroups: ["Monster", "Dragon"],
+		requiredItem: "Tyrantrumite",
+		gen: 9,
 	},
 	amaura: {
 		num: 698,
@@ -13765,6 +13787,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Red",
 		prevo: "Torracat",
 		evoLevel: 34,
+		tags: ["Bergaliga"],
 		eggGroups: ["Field"],
 	},
 	popplio: {
@@ -15299,7 +15322,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.2,
 		weightkg: 55.5,
 		color: "White",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	buzzwole: {
@@ -15312,7 +15335,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 2.4,
 		weightkg: 333.6,
 		color: "Red",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	pheromosa: {
@@ -15325,7 +15348,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.8,
 		weightkg: 25,
 		color: "White",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	xurkitree: {
@@ -15338,7 +15361,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 3.8,
 		weightkg: 100,
 		color: "Black",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	celesteela: {
@@ -15351,7 +15374,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 9.2,
 		weightkg: 999.9,
 		color: "Green",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	kartana: {
@@ -15364,7 +15387,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 0.3,
 		weightkg: 0.1,
 		color: "White",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	guzzlord: {
@@ -15377,7 +15400,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 5.5,
 		weightkg: 888,
 		color: "Black",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	necrozma: {
@@ -15526,7 +15549,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 0.6,
 		weightkg: 1.8,
 		color: "Purple",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		evos: ["Naganadel"],
 		eggGroups: ["Undiscovered"],
 	},
@@ -15540,7 +15563,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 3.6,
 		weightkg: 150,
 		color: "Purple",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		prevo: "Poipole",
 		evoType: "levelMove",
 		evoMove: "Dragon Pulse",
@@ -15556,7 +15579,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 5.5,
 		weightkg: 820,
 		color: "Gray",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	blacephalon: {
@@ -15569,7 +15592,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.8,
 		weightkg: 13,
 		color: "White",
-		tags: ["Ultra Beast"],
+		tags: ["Ultra Beast", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	zeraora: {
@@ -15687,6 +15710,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Green",
 		prevo: "Thwackey",
 		evoLevel: 35,
+		tags: ["Bergaliga"],
 		eggGroups: ["Field", "Grass"],
 		canGigantamax: "G-Max Drum Solo",
 	},
@@ -17532,6 +17556,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 2.7,
 		weightkg: 333,
 		color: "Brown",
+		tags: ["Bergaliga"],
 		eggGroups: ["Field"],
 		gen: 9,
 	},
@@ -17583,6 +17608,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoType: "levelHold",
 		evoItem: "Razor Claw",
 		evoCondition: "during the day",
+		tags: ["Bergaliga"],
 		eggGroups: ["Field"],
 	},
 	overqwil: {
@@ -18854,6 +18880,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Bisharp",
 		evoType: "other",
 		evoCondition: "Defeat 3 Bisharp leading Pawniard and level-up",
+		tags: ["Bergaliga"],
 		eggGroups: ["Human-Like"],
 	},
 	greattusk: {
@@ -18866,7 +18893,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 2.2,
 		weightkg: 320,
 		color: "Purple",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	screamtail: {
@@ -18879,7 +18906,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.2,
 		weightkg: 8,
 		color: "Pink",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	brutebonnet: {
@@ -18892,7 +18919,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.2,
 		weightkg: 21,
 		color: "White",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	fluttermane: {
@@ -18905,7 +18932,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.4,
 		weightkg: 4,
 		color: "Gray",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	slitherwing: {
@@ -18918,7 +18945,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 3.2,
 		weightkg: 92,
 		color: "White",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	sandyshocks: {
@@ -18931,7 +18958,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 2.3,
 		weightkg: 60,
 		color: "Gray",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	irontreads: {
@@ -18944,7 +18971,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 0.9,
 		weightkg: 240,
 		color: "Gray",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	ironbundle: {
@@ -18957,7 +18984,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 0.6,
 		weightkg: 11,
 		color: "Red",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	ironhands: {
@@ -18970,7 +18997,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.8,
 		weightkg: 380.7,
 		color: "Gray",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	ironjugulis: {
@@ -18983,7 +19010,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.3,
 		weightkg: 111,
 		color: "Blue",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	ironmoth: {
@@ -18996,7 +19023,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.2,
 		weightkg: 36,
 		color: "White",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	ironthorns: {
@@ -19009,7 +19036,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.6,
 		weightkg: 303,
 		color: "Green",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	frigibax: {
@@ -19111,6 +19138,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Gimmighoul",
 		evoType: "other",
 		evoCondition: "Level up with 999 Coins in the bag",
+		tags: ["Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	wochien: {
@@ -19175,7 +19203,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 2,
 		weightkg: 380,
 		color: "Blue",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	ironvaliant: {
@@ -19188,7 +19216,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 1.4,
 		weightkg: 35,
 		color: "White",
-		tags: ["Paradox"],
+		tags: ["Paradox", "Bergaliga"],
 		eggGroups: ["Undiscovered"],
 	},
 	koraidon: {

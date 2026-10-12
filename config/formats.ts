@@ -19,33 +19,47 @@ The column value will be ignored for repeat sections.
 
 export const Formats: import('../sim/dex-formats').FormatList = [
 
+	// Custom formats Proyecto Profesor
+	///////////////////////////////////////////////////////////////////
+	{
+		section: "Prof",
+	},
+	{
+		name: "[Gen 9] Super Effective",
+		desc: "All damaging moves are super effective!",
+		mod: 'supereffective',
+		ruleset: ['Standard NatDex', 'Super Effective Mod', 'Terastal Clause', 'Limit Two Restricted'],
+		restricted: ['Bergaliga'],
+		banlist: [
+			'Restricted Legendary', 'Mythical', 'Sub-Legendary', 'Flutter Mane', 'Shedinja', 'Walking Wake', 'Gouging Fire', 'Raging Bolt',
+			'Iron Leaves', 'Iron Boulder', 'Iron Crown', 'Shadow Tag', 'Arena Trap', 'Commander', 'Venusaurite', 'Charizardite X',
+			'Charizardite Y', 'Blastoisinite', 'Alakazite', 'Gengarite', 'Kangaskhanite', 'Pinsirite', 'Gyaradosite', 'Aerodactylite',
+			'Mewtwonite X', 'Mewtwonite Y', 'Ampharosite', 'Scizorite', 'Heracronite', 'Houndoominite', 'Tyranitarite', 'Blazikenite', 
+			'Gardevoirite', 'Mawilite', 'Aggronite', 'Medichamite', 'Manectite', 'Banettite', 'Absolite', 'Garchompite', 'Lucarionite', 
+			'Abomasite', 'Beedrillite', 'Pidgeotite', 'Slowbronite', 'Steelixite', 'Sceptilite', 'Swampertite', 'Sablenite', 'Sharpedonite', 
+			'Cameruptite', 'Altarianite', 'Glalitite', 'Salamencite', 'Metagrossite', 'Lopunnite', 'Galladite', 'Audinite'
+		],
+		unbanlist: ['Future', 'froslassite', 'absolitez', 'barbaracite', 'baxcalibrite', 'chandelurite',
+		 'chesnaughtite', 'chimechite', 'clefablite', 'crabominite', 'delphoxite', 'dragalgite', 'dragoninite', 'drampanite', 'eelektrossite',
+		 'emboarite', 'excadrite', 'falinksite', 'feraligite', 'garchompitez', 'glimmoranite', 'golisopite', 'golurkite', 'greninjite',
+		 'hawluchanite', 'lucarionitez', 'malamarite', 'meganiumite', 'meowsticite', 'pyroarite', 'raichunitex', 'raichunitey', 'scolipite',
+		 'scovillainite', 'scraftinite', 'skarmorite', 'staraptite', 'starminite', 'victreebelite']
+	},
+	{
+		name: "[Gen 9] No Effectivenes",
+		desc: "All damaging moves are normal effective!",
+		mod: 'noeffectivenes',
+		ruleset: ['Standard', 'No Effectiveness Mod'],
+		banlist: ['Uber', 'AG', 'Baton Pass'],
+	},
+	{
+		name: "[Gen 9] Not Very Effective",
+		desc: "All damaging moves are not very effective!",
+		mod: 'notveryeffective',
+		ruleset: ['Standard', 'Not Very Effective Mod'],
+		banlist: ['Uber', 'AG', 'Baton Pass'],
+	},
 
-	//Custom formats Proyecto Profesor
-	{
-		section: "Prof"
-	},
-	{
-    name: "[Gen 9] Super Effective",
-    desc: "All damaging moves are super effective!",
-    mod: 'supereffective',  // <-- Usa tu mod personalizado
-    ruleset: ['Standard', 'Super Effective Mod'],
-    banlist: ['Uber', 'AG', 'Baton Pass'],
-	},
-	{
-    name: "[Gen 9] No Effectivenes",
-    desc: "All damaging moves are normal effective!",
-    mod: 'noeffectivenes',  // <-- Usa tu mod personalizado
-    ruleset: ['Standard', 'No Effectiveness Mod'],
-    banlist: ['Uber', 'AG', 'Baton Pass'],
-	},
-	{
-    name: "[Gen 9] Not Very Effective",
-    desc: "All damaging moves are not very effective!",
-    mod: 'notveryeffective',  // <-- Usa tu mod personalizado
-    ruleset: ['Standard', 'Not Very Effective Mod'],
-    banlist: ['Uber', 'AG', 'Baton Pass'],
-	},
-	
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
 

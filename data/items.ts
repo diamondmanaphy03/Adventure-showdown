@@ -8178,4 +8178,15 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
+	tyrantrumite: {
+		name: "Tyrantrumite",
+		spritenum: 587,
+		megaStone: { "Tyrantrum": "Tyrantrum-Mega" },
+		itemUser: ["Tyrantrum"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: -100,
+		gen: 9,
+	},
 };
