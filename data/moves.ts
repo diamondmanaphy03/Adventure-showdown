@@ -1020,13 +1020,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					}
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('psn', target);
+					source.trySetStatus('psn', target, this.dex.getActiveMove('Baneful Bunker'));
 				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
 				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('psn', target);
+					source.trySetStatus('psn', target, this.dex.getActiveMove('Baneful Bunker'));
 				}
 			},
 		},
@@ -2055,13 +2055,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					}
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('brn', target);
+					source.trySetStatus('brn', target, this.dex.getActiveMove('Burning Bulwark'));
 				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
 				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('brn', target);
+					source.trySetStatus('brn', target, this.dex.getActiveMove('Burning Bulwark'));
 				}
 			},
 		},
@@ -3275,8 +3275,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		volatileStatus: 'curse',
 		onModifyMove(move, source, target) {
 			if (!source.hasType('Ghost')) {
-				move.target = move.nonGhostTarget!;
-			} else if (source.isAlly(target)) {
+				move.target = 'self';
+			} else if (!target || source.isAlly(target)) {
 				move.target = 'randomNormal';
 			}
 		},
@@ -3302,7 +3302,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		target: "normal",
-		nonGhostTarget: "self",
 		type: "Ghost",
 		zMove: { effect: 'curse' },
 		contestType: "Tough",
@@ -14399,9 +14398,17 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onFoeBeforeSwitchOut(pokemon) {
 				const source: Pokemon = this.effectState.source;
 				this.debug('Pursuit start');
-				if (!source.isAdjacent(pokemon) || !source.hp ||
+				if (
+					!source.isAdjacent(pokemon) || !source.hp ||
 					(source.volatiles['encore'] && source.volatiles['encore'].move !== 'pursuit') ||
-					!this.queue.cancelMove(source)) return;
+					!this.queue.cancelMove(source)
+				) {
+					return;
+				}
+				if (!this.event.pursuitMessageShown) {
+					this.add('-activate', pokemon, 'move: Pursuit');
+					this.event.pursuitMessageShown = true;
+				}
 				// Run through each action in queue to check if the Pursuit user is supposed to Mega Evolve this turn.
 				// If it is, then Mega Evolve before moving.
 				if (source.canMegaEvo || source.canUltraBurst || source.canTerastallize) {
