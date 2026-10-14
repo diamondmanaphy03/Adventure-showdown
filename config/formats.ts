@@ -25,33 +25,47 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Prof"
 	},
 	{
-    name: "[Gen 9] Super Effective",
-    desc: "All damaging moves are super effective!",
-    mod: 'supereffective',  // <-- Usa tu mod personalizado
-    ruleset: ['Standard', 'Super Effective Mod'],
-    banlist: ['Uber', 'AG', 'Baton Pass'],
+		name: "[Gen 9] Super Effective",
+		desc: "All damaging moves are super effective!",
+		mod: 'supereffective',  // <-- Usa tu mod personalizado
+		ruleset: ['Standard', 'Super Effective Mod'],
+		banlist: ['Uber', 'AG', 'Baton Pass'],
 	},
 	{
-    name: "[Gen 9] No Effectivenes",
-    desc: "All damaging moves are normal effective!",
-    mod: 'noeffectivenes',  // <-- Usa tu mod personalizado
-    ruleset: ['Standard', 'No Effectiveness Mod'],
-    banlist: ['Uber', 'AG', 'Baton Pass'],
+		name: "[Gen 9] No Effectivenes",
+		desc: "All damaging moves are normal effective!",
+		mod: 'noeffectivenes',  // <-- Usa tu mod personalizado
+		ruleset: ['Standard', 'No Effectiveness Mod'],
+		banlist: ['Uber', 'AG', 'Baton Pass'],
 	},
 	{
-    name: "[Gen 9] Not Very Effective",
-    desc: "All damaging moves are not very effective!",
-    mod: 'notveryeffective',  // <-- Usa tu mod personalizado
-    ruleset: ['Standard', 'Not Very Effective Mod'],
-    banlist: ['Uber', 'AG', 'Baton Pass'],
+		name: "[Gen 9] Not Very Effective",
+		desc: "All damaging moves are not very effective!",
+		mod: 'notveryeffective',  // <-- Usa tu mod personalizado
+		ruleset: ['Standard', 'Not Very Effective Mod'],
+		banlist: ['Uber', 'AG', 'Baton Pass'],
 	},
 	{
-    name: "[Gen 9] Metronome Force",
-    desc: "Each Pokémon must use Metronome on their first turn after entering the field.",
-    mod: 'metronomeforce',  // <-- Usa tu mod personalizado
-    ruleset: ['Standard', 'Metronome Force Mod'],
-    banlist: ['Uber', 'AG', 'Baton Pass'],
+		name: "[Gen 9] Metronome Force",
+		desc: "Each Pokémon must use Metronome on their first turn after entering the field.",
+		mod: 'metronomeforce',  // <-- Usa tu mod personalizado
+		ruleset: ['Standard', 'Metronome Force Mod'],
+		banlist: ['Uber', 'AG', 'Baton Pass'],
 	},
+	{
+		name: "[Gen 9] Full Metronome",
+		desc: "Each Pokémon must use Metronome always.",
+		mod: 'fullmetronome',  // <-- Usa tu mod personalizado
+		ruleset: ['Standard', 'Full Metronome Mod'],
+		banlist: ['Uber', 'AG', 'Baton Pass'],
+	},
+	{
+		name: "[Gen 9] Metronome Force Easy",
+		desc: "Each Pokémon must use Metronome once, the first time it enters the field.",
+		mod: 'metronomeforceeasy',  // <-- Usa tu mod personalizado
+		ruleset: ['Standard', 'Metronome Force Easy Mod'],
+		banlist: ['Uber', 'AG', 'Baton Pass'],
+},
 
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
