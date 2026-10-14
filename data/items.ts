@@ -1722,19 +1722,23 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onAnySwitchIn() {
 			if (!this.effectState.eject) return;
 			(this.effectState.target as Pokemon).useItem();
+			delete this.effectState.eject;
 		},
 		onAnyAfterMega() {
 			if (!this.effectState.eject) return;
 			(this.effectState.target as Pokemon).useItem();
+			delete this.effectState.eject;
 		},
 		onAnyAfterMove() {
 			if (!this.effectState.eject) return;
 			(this.effectState.target as Pokemon).useItem();
+			delete this.effectState.eject;
 		},
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (!this.effectState.eject) return;
 			(this.effectState.target as Pokemon).useItem();
+			delete this.effectState.eject;
 		},
 		onUseItem(item, pokemon) {
 			if (!this.canSwitch(pokemon.side)) return false;
@@ -8177,5 +8181,16 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: -2,
 		gen: 8,
 		isNonstandard: "CAP",
+	},
+	tyrantrumite: {
+		name: "Tyrantrumite",
+		spritenum: 587,
+		megaStone: { "Tyrantrum": "Tyrantrum-Mega" },
+		itemUser: ["Tyrantrum"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: -100,
+		gen: 9,
 	},
 };

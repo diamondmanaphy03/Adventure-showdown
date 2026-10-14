@@ -9,20 +9,18 @@ export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable 
 	///////////////////////////////////////////////////////////////////
 	supereffectivemod: {
 		inherit: true,
-        effectType: 'Rule',
-        name: 'Super Effective Mod',
-        desc: "All damaging moves are super effective.",
-        onNegateImmunity: false,
-        onBegin() {
-            this.add('rule', 'Super Effective Mod: All damaging moves are super effective!');
-        },
-        onEffectivenessPriority: 1,
-        onEffectiveness(typeMod, target, type, move) {
-            if (move && move.category === 'Status') return;
-            if (move && !this.dex.getImmunity(move, type)) return 1;
-            return 1;
-        },
-    },
-	
-	
+		effectType: 'Rule',
+		name: 'Super Effective Mod',
+		desc: "All damaging moves are super effective.",
+		onNegateImmunity: false,
+		onBegin() {
+			this.add('rule', 'Super Effective Mod: All damaging moves are super effective!');
+		},
+		onEffectivenessPriority: 1,
+		onEffectiveness(typeMod, target, type, move) {
+			if (move && move.category === 'Status') return;
+			if (move && !this.dex.getImmunity(move, type)) return 1;
+			return 1;
+		},
+	},
 };
