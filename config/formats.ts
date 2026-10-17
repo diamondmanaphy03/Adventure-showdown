@@ -28,7 +28,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Super Effective",
 		desc: "All damaging moves are super effective!",
 		mod: 'supereffective',
-		ruleset: ['Standard NatDex', 'Super Effective Mod', 'Terastal Clause', 'Limit Two Restricted'],
+		ruleset: ['Standard NatDex', 'Super Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
 		restricted: ['Bergaliga'],
 		banlist: [
 			'Restricted Legendary', 'Mythical', 'Sub-Legendary', 'Flutter Mane', 'Shedinja', 'Walking Wake', 'Gouging Fire', 'Raging Bolt',
@@ -49,37 +49,122 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] No Effectivenes",
 		desc: "All damaging moves are normal effective!",
 		mod: 'noeffectivenes',
-		ruleset: ['Standard', 'No Effectiveness Mod'],
-		banlist: ['Uber', 'AG', 'Baton Pass'],
+		ruleset: ['Standard NatDex', 'No Effectiveness Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		restricted: ['Bergaliga'],
+		banlist: [
+			'Restricted Legendary', 'Mythical', 'Sub-Legendary', 'Flutter Mane', 'Shedinja', 'Walking Wake', 'Gouging Fire', 'Raging Bolt',
+			'Iron Leaves', 'Iron Boulder', 'Iron Crown', 'Shadow Tag', 'Arena Trap', 'Commander', 'Venusaurite', 'Charizardite X',
+			'Charizardite Y', 'Blastoisinite', 'Alakazite', 'Gengarite', 'Kangaskhanite', 'Pinsirite', 'Gyaradosite', 'Aerodactylite',
+			'Mewtwonite X', 'Mewtwonite Y', 'Ampharosite', 'Scizorite', 'Heracronite', 'Houndoominite', 'Tyranitarite', 'Blazikenite', 
+			'Gardevoirite', 'Mawilite', 'Aggronite', 'Medichamite', 'Manectite', 'Banettite', 'Absolite', 'Garchompite', 'Lucarionite', 
+			'Abomasite', 'Beedrillite', 'Pidgeotite', 'Slowbronite', 'Steelixite', 'Sceptilite', 'Swampertite', 'Sablenite', 'Sharpedonite', 
+			'Cameruptite', 'Altarianite', 'Glalitite', 'Salamencite', 'Metagrossite', 'Lopunnite', 'Galladite', 'Audinite'
+		],
+		unbanlist: ['Future', 'froslassite', 'absolitez', 'barbaracite', 'baxcalibrite', 'chandelurite',
+		 'chesnaughtite', 'chimechite', 'clefablite', 'crabominite', 'delphoxite', 'dragalgite', 'dragoninite', 'drampanite', 'eelektrossite',
+		 'emboarite', 'excadrite', 'falinksite', 'feraligite', 'garchompitez', 'glimmoranite', 'golisopite', 'golurkite', 'greninjite',
+		 'hawluchanite', 'lucarionitez', 'malamarite', 'meganiumite', 'meowsticite', 'pyroarite', 'raichunitex', 'raichunitey', 'scolipite',
+		 'scovillainite', 'scraftinite', 'skarmorite', 'staraptite', 'starminite', 'victreebelite']
 	},
 	{
 		name: "[Gen 9] Not Very Effective",
 		desc: "All damaging moves are not very effective!",
-		mod: 'notveryeffective',  // <-- Usa tu mod personalizado
-		ruleset: ['Standard', 'Not Very Effective Mod'],
-		banlist: ['Uber', 'AG', 'Baton Pass'],
+		mod: 'notveryeffective', 
+		ruleset: ['Standard NatDex', 'Not Very Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		restricted: ['Bergaliga'],
+		banlist: [
+			'Restricted Legendary', 'Mythical', 'Sub-Legendary', 'Flutter Mane', 'Shedinja', 'Walking Wake', 'Gouging Fire', 'Raging Bolt',
+			'Iron Leaves', 'Iron Boulder', 'Iron Crown', 'Shadow Tag', 'Arena Trap', 'Commander', 'Venusaurite', 'Charizardite X',
+			'Charizardite Y', 'Blastoisinite', 'Alakazite', 'Gengarite', 'Kangaskhanite', 'Pinsirite', 'Gyaradosite', 'Aerodactylite',
+			'Mewtwonite X', 'Mewtwonite Y', 'Ampharosite', 'Scizorite', 'Heracronite', 'Houndoominite', 'Tyranitarite', 'Blazikenite', 
+			'Gardevoirite', 'Mawilite', 'Aggronite', 'Medichamite', 'Manectite', 'Banettite', 'Absolite', 'Garchompite', 'Lucarionite', 
+			'Abomasite', 'Beedrillite', 'Pidgeotite', 'Slowbronite', 'Steelixite', 'Sceptilite', 'Swampertite', 'Sablenite', 'Sharpedonite', 
+			'Cameruptite', 'Altarianite', 'Glalitite', 'Salamencite', 'Metagrossite', 'Lopunnite', 'Galladite', 'Audinite'
+		],
+		unbanlist: ['Future', 'froslassite', 'absolitez', 'barbaracite', 'baxcalibrite', 'chandelurite',
+		 'chesnaughtite', 'chimechite', 'clefablite', 'crabominite', 'delphoxite', 'dragalgite', 'dragoninite', 'drampanite', 'eelektrossite',
+		 'emboarite', 'excadrite', 'falinksite', 'feraligite', 'garchompitez', 'glimmoranite', 'golisopite', 'golurkite', 'greninjite',
+		 'hawluchanite', 'lucarionitez', 'malamarite', 'meganiumite', 'meowsticite', 'pyroarite', 'raichunitex', 'raichunitey', 'scolipite',
+		 'scovillainite', 'scraftinite', 'skarmorite', 'staraptite', 'starminite', 'victreebelite']
 	},
 	{
 		name: "[Gen 9] Metronome Force",
 		desc: "Each Pokémon must use Metronome on their first turn after entering the field.",
-		mod: 'metronomeforce',  // <-- Usa tu mod personalizado
-		ruleset: ['Standard', 'Metronome Force Mod'],
-		banlist: ['Uber', 'AG', 'Baton Pass'],
+		mod: 'metronomeforce',  
+		ruleset: ['Standard NatDex', 'Metronome Force Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		restricted: ['Bergaliga'],
+		banlist: [
+			'Restricted Legendary', 'Mythical', 'Sub-Legendary', 'Flutter Mane', 'Shedinja', 'Walking Wake', 'Gouging Fire', 'Raging Bolt',
+			'Iron Leaves', 'Iron Boulder', 'Iron Crown', 'Shadow Tag', 'Arena Trap', 'Commander', 'Venusaurite', 'Charizardite X',
+			'Charizardite Y', 'Blastoisinite', 'Alakazite', 'Gengarite', 'Kangaskhanite', 'Pinsirite', 'Gyaradosite', 'Aerodactylite',
+			'Mewtwonite X', 'Mewtwonite Y', 'Ampharosite', 'Scizorite', 'Heracronite', 'Houndoominite', 'Tyranitarite', 'Blazikenite', 
+			'Gardevoirite', 'Mawilite', 'Aggronite', 'Medichamite', 'Manectite', 'Banettite', 'Absolite', 'Garchompite', 'Lucarionite', 
+			'Abomasite', 'Beedrillite', 'Pidgeotite', 'Slowbronite', 'Steelixite', 'Sceptilite', 'Swampertite', 'Sablenite', 'Sharpedonite', 
+			'Cameruptite', 'Altarianite', 'Glalitite', 'Salamencite', 'Metagrossite', 'Lopunnite', 'Galladite', 'Audinite'
+		],
+		unbanlist: ['Future', 'froslassite', 'absolitez', 'barbaracite', 'baxcalibrite', 'chandelurite',
+		 'chesnaughtite', 'chimechite', 'clefablite', 'crabominite', 'delphoxite', 'dragalgite', 'dragoninite', 'drampanite', 'eelektrossite',
+		 'emboarite', 'excadrite', 'falinksite', 'feraligite', 'garchompitez', 'glimmoranite', 'golisopite', 'golurkite', 'greninjite',
+		 'hawluchanite', 'lucarionitez', 'malamarite', 'meganiumite', 'meowsticite', 'pyroarite', 'raichunitex', 'raichunitey', 'scolipite',
+		 'scovillainite', 'scraftinite', 'skarmorite', 'staraptite', 'starminite', 'victreebelite']
 	},
 	{
 		name: "[Gen 9] Full Metronome",
 		desc: "Each Pokémon must use Metronome always.",
-		mod: 'fullmetronome',  // <-- Usa tu mod personalizado
-		ruleset: ['Standard', 'Full Metronome Mod'],
-		banlist: ['Uber', 'AG', 'Baton Pass'],
+		mod: 'fullmetronome',  
+		ruleset: ['Standard NatDex', 'Full Metronome Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		restricted: ['Bergaliga'],
+		banlist: [
+			'Restricted Legendary', 'Mythical', 'Sub-Legendary', 'Flutter Mane', 'Shedinja', 'Walking Wake', 'Gouging Fire', 'Raging Bolt',
+			'Iron Leaves', 'Iron Boulder', 'Iron Crown', 'Shadow Tag', 'Arena Trap', 'Commander', 'Venusaurite', 'Charizardite X',
+			'Charizardite Y', 'Blastoisinite', 'Alakazite', 'Gengarite', 'Kangaskhanite', 'Pinsirite', 'Gyaradosite', 'Aerodactylite',
+			'Mewtwonite X', 'Mewtwonite Y', 'Ampharosite', 'Scizorite', 'Heracronite', 'Houndoominite', 'Tyranitarite', 'Blazikenite', 
+			'Gardevoirite', 'Mawilite', 'Aggronite', 'Medichamite', 'Manectite', 'Banettite', 'Absolite', 'Garchompite', 'Lucarionite', 
+			'Abomasite', 'Beedrillite', 'Pidgeotite', 'Slowbronite', 'Steelixite', 'Sceptilite', 'Swampertite', 'Sablenite', 'Sharpedonite', 
+			'Cameruptite', 'Altarianite', 'Glalitite', 'Salamencite', 'Metagrossite', 'Lopunnite', 'Galladite', 'Audinite'
+		],
+		unbanlist: ['Future', 'froslassite', 'absolitez', 'barbaracite', 'baxcalibrite', 'chandelurite',
+		 'chesnaughtite', 'chimechite', 'clefablite', 'crabominite', 'delphoxite', 'dragalgite', 'dragoninite', 'drampanite', 'eelektrossite',
+		 'emboarite', 'excadrite', 'falinksite', 'feraligite', 'garchompitez', 'glimmoranite', 'golisopite', 'golurkite', 'greninjite',
+		 'hawluchanite', 'lucarionitez', 'malamarite', 'meganiumite', 'meowsticite', 'pyroarite', 'raichunitex', 'raichunitey', 'scolipite',
+		 'scovillainite', 'scraftinite', 'skarmorite', 'staraptite', 'starminite', 'victreebelite']
 	},
 	{
 		name: "[Gen 9] Metronome Force Easy",
 		desc: "Each Pokémon must use Metronome once, the first time it enters the field.",
-		mod: 'metronomeforceeasy',  // <-- Usa tu mod personalizado
-		ruleset: ['Standard', 'Metronome Force Easy Mod'],
-		banlist: ['Uber', 'AG', 'Baton Pass'],
-},
+		mod: 'metronomeforceeasy',  
+		ruleset: ['Standard NatDex', 'Metronome Force Easy Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		restricted: ['Bergaliga'],
+		banlist: [
+			'Restricted Legendary', 'Mythical', 'Sub-Legendary', 'Flutter Mane', 'Shedinja', 'Walking Wake', 'Gouging Fire', 'Raging Bolt',
+			'Iron Leaves', 'Iron Boulder', 'Iron Crown', 'Shadow Tag', 'Arena Trap', 'Commander', 'Venusaurite', 'Charizardite X',
+			'Charizardite Y', 'Blastoisinite', 'Alakazite', 'Gengarite', 'Kangaskhanite', 'Pinsirite', 'Gyaradosite', 'Aerodactylite',
+			'Mewtwonite X', 'Mewtwonite Y', 'Ampharosite', 'Scizorite', 'Heracronite', 'Houndoominite', 'Tyranitarite', 'Blazikenite', 
+			'Gardevoirite', 'Mawilite', 'Aggronite', 'Medichamite', 'Manectite', 'Banettite', 'Absolite', 'Garchompite', 'Lucarionite', 
+			'Abomasite', 'Beedrillite', 'Pidgeotite', 'Slowbronite', 'Steelixite', 'Sceptilite', 'Swampertite', 'Sablenite', 'Sharpedonite', 
+			'Cameruptite', 'Altarianite', 'Glalitite', 'Salamencite', 'Metagrossite', 'Lopunnite', 'Galladite', 'Audinite'
+		],
+		unbanlist: ['Future', 'froslassite', 'absolitez', 'barbaracite', 'baxcalibrite', 'chandelurite',
+		 'chesnaughtite', 'chimechite', 'clefablite', 'crabominite', 'delphoxite', 'dragalgite', 'dragoninite', 'drampanite', 'eelektrossite',
+		 'emboarite', 'excadrite', 'falinksite', 'feraligite', 'garchompitez', 'glimmoranite', 'golisopite', 'golurkite', 'greninjite',
+		 'hawluchanite', 'lucarionitez', 'malamarite', 'meganiumite', 'meowsticite', 'pyroarite', 'raichunitex', 'raichunitey', 'scolipite',
+		 'scovillainite', 'scraftinite', 'skarmorite', 'staraptite', 'starminite', 'victreebelite']
+	},
+	{
+		name: "[Gen 9] Bergaliga LC",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'Bergaliga Little Cup', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		//Los Pokemons sin línea evolutiva se desbanean en rulesets.ts porque si no, la regla de restricted y unban colisionan y predomina el unban (no se restringen)
+		restricted: ['Clamperl', 'Cutiefly', 'Drifloon', 'Flittle', 'Meditite', 'Porygon', 'Rufflet', 'Voltorb-Hisui', 'Woobat',
+			'Corsola','Pachirisu','Maractus','Dedenne','Morpeko','Squawkabilly', 'Delibird', 'Plusle', 'Minun', 'Spinda', 'Castform',
+			'Chatot', 'Emolga', 'Togedemaru'],
+		banlist: [
+			'Shadow Tag', 'Arena Trap', 'Aipom', 'Basculin-White-Striped', 'Deep Sea Tooth', 'Corsola-Galar', 'Dunsparce', 'Duraludon', 'Girafarig',
+			'Gligar', 'Misdreavus', 'Murkrow', 'Qwilfish-Hisui', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
+			'Stantler', 'Swirlix', 'Tangela', 'Yanma', 'Zigzagoon-Base', 'Moody', 'Eevium Z', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Aurora Veil', 'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Sticky Web', 'Stored Power'
+		],
+	},
 
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////

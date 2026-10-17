@@ -7,7 +7,26 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 
 	// Rulesets
 	///////////////////////////////////////////////////////////////////
-
+	bergaligalittlecup: {
+		effectType: 'ValidatorRule',
+		name: 'Bergaliga Little Cup',
+		desc: "Little Cup que permite Pokémon concretos sin línea evolutiva (se listan en unbanlist).",
+		ruleset: ['Max Level = 5'],
+		onValidateSet(set) {
+			const species = this.dex.species.get(set.species || set.name);
+			const noEvoAllowed = [
+			'Corsola', 'Pachirisu', 'Maractus', 'Dedenne', 'Morpeko', 'Squawkabilly', 'Delibird',
+			'Plusle', 'Minun', 'Spinda', 'Castform', 'Chatot', 'Emolga', 'Togedemaru', 'Luvdisc',
+		].map(this.toID);
+			if (noEvoAllowed.includes(this.toID(species.baseSpecies))) return;
+			if (species.prevo && this.dex.species.get(species.prevo).gen <= this.gen) {
+				return [set.species + " isn't the first in its evolution family."];
+			}
+			if (!species.nfe) {
+				return [set.species + " doesn't have an evolution family."];
+			}
+		},
+	},
 	standardag: {
 		effectType: 'ValidatorRule',
 		name: 'Standard AG',
