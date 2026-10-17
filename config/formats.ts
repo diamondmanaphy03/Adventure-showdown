@@ -153,10 +153,11 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] Bergaliga LC",
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'Little Cup', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		ruleset: ['Standard NatDex', 'Bergaliga Little Cup', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		//Los Pokemons sin línea evolutiva se desbanean en rulesets.ts porque si no, la regla de restricted y unban colisionan y predomina el unban (no se restringen)
 		restricted: ['Clamperl', 'Cutiefly', 'Drifloon', 'Flittle', 'Meditite', 'Porygon', 'Rufflet', 'Voltorb-Hisui', 'Woobat',
-			'Corsola','Pachirisu','Maractus','Dedenne','Morpeko','Squawkabilly', 'Delibird', 'Plusle', 'Minun', 'Spinda', 'Castform', 'Luvdisc',
-			'Chatot', 'Emolga', ''],
+			'Corsola','Pachirisu','Maractus','Dedenne','Morpeko','Squawkabilly', 'Delibird', 'Plusle', 'Minun', 'Spinda', 'Castform',
+			'Chatot', 'Emolga', 'Togedemaru'],
 		banlist: [
 			'Shadow Tag', 'Arena Trap', 'Aipom', 'Basculin-White-Striped', 'Deep Sea Tooth', 'Corsola-Galar', 'Dunsparce', 'Duraludon', 'Girafarig',
 			'Gligar', 'Misdreavus', 'Murkrow', 'Qwilfish-Hisui', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
