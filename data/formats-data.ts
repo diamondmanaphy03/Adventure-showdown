@@ -2526,6 +2526,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	piplup: {
 		tier: "LC",
 	},
+	piplupsleepy: {
+		tier: "LC",
+		natDexTier: "LC",
+	},
 	prinplup: {
 		tier: "NFE",
 	},
@@ -6256,5 +6260,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	pokestarufopropu2: {
 		isNonstandard: "Custom",
 		tier: "Illegal",
+	},
+	aventwyrm: {
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "UUBL",
 	},
 };

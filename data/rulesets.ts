@@ -16,9 +16,10 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			const species = this.dex.species.get(set.species || set.name);
 			const noEvoAllowed = [
 			'Corsola', 'Pachirisu', 'Maractus', 'Dedenne', 'Morpeko', 'Squawkabilly', 'Delibird',
-			'Plusle', 'Minun', 'Spinda', 'Castform', 'Chatot', 'Emolga', 'Togedemaru', 'Luvdisc',
+			'Plusle', 'Minun', 'Spinda', 'Castform', 'Chatot', 'Emolga', 'Togedemaru', 'Luvdisc', 
+			'Piplup-Sleepy',
 		].map(this.toID);
-			if (noEvoAllowed.includes(this.toID(species.baseSpecies))) return;
+			if (noEvoAllowed.includes(species.id) || noEvoAllowed.includes(this.toID(species.baseSpecies))) return;
 			if (species.prevo && this.dex.species.get(species.prevo).gen <= this.gen) {
 				return [set.species + " isn't the first in its evolution family."];
 			}
