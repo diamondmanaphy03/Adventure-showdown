@@ -1502,6 +1502,77 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 59,
 	},
+	climadaptacion: {
+		onSwitchInPriority: -2,
+		onStart(pokemon) {
+			this.singleEvent('WeatherChange', this.effect, this.effectState, pokemon);
+		},
+		onWeatherChange(pokemon) {
+			if (pokemon.baseSpecies.baseSpecies !== 'Meteoform' || pokemon.transformed) return;
+			let forme = null;
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				if (pokemon.species.id !== 'meteoformsunny') forme = 'Meteoform-Sunny';
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				if (pokemon.species.id !== 'meteoformrainy') forme = 'Meteoform-Rainy';
+				break;
+			case 'hail':
+			case 'snowscape':
+				if (pokemon.species.id !== 'meteoformsnowy') forme = 'Meteoform-Snowy';
+				break;
+			case 'sandstorm':
+				if (pokemon.species.id !== 'meteoformsandy') forme = 'Meteoform-Sandy';
+				break;
+			default:
+				if (pokemon.species.id !== 'meteoform') forme = 'Meteoform';
+				break;
+			}
+			if (pokemon.isActive && forme) {
+				pokemon.formeChange(forme, this.effect, false, '0', '[msg]');
+			}
+		},
+
+		onEnd(pokemon) {
+			pokemon.removeVolatile('climadaptacion');
+		},
+
+		condition: {
+			noCopy: true,
+			onStart(pokemon) {
+				const stats: {[k: string]: string} = {
+					raindance: 'spe', primordialsea: 'spe',
+					sunnyday: 'spa', desolateland: 'spa',
+					hail: 'spd', snowscape: 'spd',
+					sandstorm: 'def',
+				};
+				this.effectState.stat = stats[pokemon.effectiveWeather()];
+				this.add('-start', pokemon, 'climadaptacion' + this.effectState.stat);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'climadaptacion' + this.effectState.stat);
+			},
+		},
+
+		onModifySpe(spe, pokemon) {
+		if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) return this.chainModify(1.5);
+		},
+		onModifySpA(spa, pokemon) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) return this.chainModify(1.5);
+		},
+		onModifySpD(spd, pokemon) {
+			if (['hail', 'snowscape'].includes(pokemon.effectiveWeather())) return this.chainModify(1.5);
+		},
+		onModifyDef(def, pokemon) {
+			if (pokemon.effectiveWeather() === 'sandstorm') return this.chainModify(1.5);
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1 },
+		name: "Climadaptacion",
+		rating: 3,
+		num: -601,
+	},
 	forewarn: {
 		onStart(pokemon) {
 			let warnMoves: (Move | Pokemon)[][] = [];

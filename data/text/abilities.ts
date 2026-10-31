@@ -551,6 +551,14 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 			desc: "If this Pokemon is a Castform, its type changes to the current weather condition's type, except Sandstorm.",
 		},
 	},
+	climadaptacion: {
+		name: "Climadaptacion",
+		desc: "If this Pokemon is a Meteoform, its type changes to the current weather condition's type and gain a stat boost. This effect is prevented if this Pokemon is holding a Utility Umbrella and the weather is Rain or Sun.",
+		shortDesc: "Meteoform's type changes to the current weather condition's type and gains a stat boost.",
+		gen7: {
+			desc: "If this Pokemon is a Meteoform, its type changes to the current weather condition's type and gains a stat boost.",
+		},
+	},
 	forewarn: {
 		name: "Forewarn",
 		desc: "On switch-in, this Pokemon is alerted to the move with the highest power, at random, known by an opposing Pokemon. This effect considers OHKO moves to have 150 power, Counter, Mirror Coat, and Metal Burst to have 120 power, every other attacking move with an unspecified power to have 80 power, and non-damaging moves to have 1 power.",

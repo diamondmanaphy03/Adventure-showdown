@@ -2257,6 +2257,23 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	castformsnowy: {
 		isNonstandard: "Past",
 	},
+	meteoform: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "UU",
+	},
+	meteoformsunny: {
+		isNonstandard: "Past",
+	},
+	meteoformrainy: {
+		isNonstandard: "Past",
+	},
+	meteoformsnowy: {
+		isNonstandard: "Past",
+	},
+	meteoformsandy: {
+		isNonstandard: "Past",
+	},
 	kecleon: {
 		isNonstandard: "Past",
 		tier: "Illegal",
