@@ -49,6 +49,7 @@ import { Utils, type ProcessManager } from '../lib';
 import {
 	Auth, GlobalAuth, PLAYER_SYMBOL, HOST_SYMBOL, type RoomPermission, type GlobalPermission,
 } from './user-groups';
+import * as LocalAccounts from './local-accounts';
 
 const MINUTES = 60 * 1000;
 const IDLE_TIMER = 60 * MINUTES;
@@ -332,6 +333,7 @@ export interface UserSettings {
 	allowFriendNotifications: boolean;
 	displayBattlesToFriends: boolean;
 	hideLogins: boolean;
+	allowLadderBots: boolean;
 }
 
 // User
@@ -475,6 +477,7 @@ export class User extends Chat.MessageContext {
 			allowFriendNotifications: false,
 			displayBattlesToFriends: false,
 			hideLogins: false,
+			allowLadderBots: false,
 		};
 		this.battleSettings = {
 			team: '',
@@ -638,6 +641,17 @@ export class User extends Chat.MessageContext {
 		}
 	}
 	async validateToken(token: string, name: string, userid: ID, connection: Connection) {
+		// Cuentas locales: los nombres registrados exigen contraseña
+		if (LocalAccounts.has(userid)) {
+			if (!token) {
+				this.send(`|nametaken|${name}|AUTH_REQUIRED`);
+				return null;
+			}
+			const result = LocalAccounts.verify(userid, token, connection.ip);
+			if (result === 'ok') return '2';
+			this.send(`|nametaken|${name}|AUTH_WRONG:${result === 'locked' ? 'Demasiados intentos. Espera unos minutos.' : 'Contraseña incorrecta.'}`);
+			return null;
+		}
 		if (!token && Config.noguestsecurity) {
 			if (Users.isTrusted(userid)) {
 				this.send(`|nametaken|${name}|You need an authentication token to log in as a trusted user.`);
@@ -789,7 +803,7 @@ export class User extends Chat.MessageContext {
 		}
 
 		this.handleRename(name, userid, newlyRegistered, userType);
-		void Punishments.checkIp(this, connection); // namelock enforcement and the like after merge
+		void Punishments.checkIp(connection.user || this, connection); // namelock enforcement and the like after merge
 	}
 
 	handleRename(name: string, userid: ID, newlyRegistered: boolean, userType: string) {
@@ -841,6 +855,7 @@ export class User extends Chat.MessageContext {
 			} else if (userType === '10') {
 				this.autoconfirmed = userid;
 				this.isUserBot = true;
+				this.settings.allowLadderBots = true;
 			}
 		}
 		if (Users.isTrusted(userid)) {
@@ -938,7 +953,7 @@ export class User extends Chat.MessageContext {
 		for (const roomid of this.games) {
 			const room = Rooms.get(roomid);
 			if (!room) {
-				Monitor.warn(`while renaming, room ${roomid} expired for user ${this.id} in rooms ${[...this.inRooms]} and games ${[...this.games]}`);
+				Monitor.warn(`while renaming, room ${roomid} expired for user ${this.id} in rooms ${[...this.inRooms].join(',')} and games ${[...this.games].join(',')}`);
 				this.games.delete(roomid);
 				continue;
 			}
@@ -1135,7 +1150,7 @@ export class User extends Chat.MessageContext {
 		}
 		if (this.trusted) {
 			if (this.locked && this.permalocked) {
-				Monitor.log(`[CrisisMonitor] Trusted user '${this.id}' is ${this.permalocked !== this.id ? `an alt of permalocked user '${this.permalocked}'` : `a permalocked user`}, and was automatically demoted from ${this.distrust()}.`);
+				Monitor.log(`[CrisisMonitor] Trusted user '${this.id}' is ${this.permalocked !== this.id ? `an alt of permalocked user '${this.permalocked}'` : `a permalocked user`}, and was automatically demoted from ${this.distrust()!.join(',')}.`);
 				return;
 			}
 			this.locked = null;
@@ -1551,7 +1566,7 @@ export class User extends Chat.MessageContext {
 		for (const roomid of this.games) {
 			const game = Rooms.get(roomid)?.game;
 			if (!game) {
-				Monitor.warn(`while deallocating, room ${roomid} did not have a game for ${this.id} in rooms ${[...this.inRooms]} and games ${[...this.games]}`);
+				Monitor.warn(`while deallocating, room ${roomid} did not have a game for ${this.id} in rooms ${[...this.inRooms].join(',')} and games ${[...this.games].join(',')}`);
 				this.games.delete(roomid);
 				continue;
 			}

@@ -113,10 +113,12 @@ export const commands: Chat.ChatCommands = {
 	whoare: 'whois',
 	altsnorecurse: 'whois',
 	profile: 'whois',
+	battles: 'whois',
 	whois(target, room, user, connection, cmd) {
 		if (room?.roomid === 'staff' && !this.runBroadcast()) return;
 		const targetUser = this.getUserOrSelf(target, { exactName: user.tempGroup === ' ' });
-		const showAll = (cmd === 'ip' || cmd === 'whoare' || cmd === 'alt' || cmd === 'alts' || cmd === 'altsnorecurse');
+		const showAllVariants = ['ip', 'whoare', 'alt', 'alts', 'altsnorecurse', 'battles'];
+		const showAll = showAllVariants.includes(cmd);
 		const showRecursiveAlts = showAll && (cmd !== 'altsnorecurse');
 		if (!targetUser) {
 			if (showAll) return this.parse('/offlinewhois ' + target);
@@ -285,8 +287,9 @@ export const commands: Chat.ChatCommands = {
 				}
 				if (Punishments.isSharedIp(ip)) {
 					let sharedStr = 'shared';
-					if (Punishments.sharedIps.get(ip)) {
-						sharedStr += `: ${Punishments.sharedIps.get(ip)}`;
+					const sharedIpReason = Punishments.sharedIps.get(ip);
+					if (sharedIpReason) {
+						sharedStr += `: ${sharedIpReason}`;
 					}
 					status.push(sharedStr);
 				}
@@ -404,7 +407,7 @@ export const commands: Chat.ChatCommands = {
 		if (!user.can('alts') && !atLeastOne) {
 			const hasJurisdiction = room && user.can('mute', null, room) && Punishments.roomUserids.nestedHas(room.roomid, userid);
 			if (!hasJurisdiction) {
-				throw new Chat.ErrorMessage("/checkpunishment - User not found.");
+				throw new Chat.ErrorMessage("/checkpunishment - You have no jurisdiction over this user.");
 			}
 		}
 
@@ -578,7 +581,6 @@ export const commands: Chat.ChatCommands = {
 		}
 		this.errorReply(`You're using a custom client that doesn't support the ignore command.`);
 	},
-	ignorehelp: [`/ignore [user] - Ignore the given [user].`],
 
 	/*********************************************************
 	 * Data Search Dex
@@ -708,22 +710,22 @@ export const commands: Chat.ChatCommands = {
 								evos.push(`${name} (level-up with high Friendship${condition})`);
 								break;
 							case 'levelHold':
-								evos.push(`${name} (level-up holding ${evo.evoItem}${condition})`);
+								evos.push(`${name} (level-up holding ${evo.evoItem!}${condition})`);
 								break;
 							case 'useItem':
-								evos.push(`${name} (${evo.evoItem}${condition})`);
+								evos.push(`${name} (${evo.evoItem!}${condition})`);
 								break;
 							case 'levelMove':
-								evos.push(`${name} (level-up with ${evo.evoMove}${condition})`);
+								evos.push(`${name} (level-up with ${evo.evoMove!}${condition})`);
 								break;
 							case 'other':
-								evos.push(`${name} (${evo.evoCondition})`);
+								evos.push(`${name} (${evo.evoCondition!})`);
 								break;
 							case 'trade':
 								evos.push(`${name} (trade${evo.evoItem ? ` holding ${evo.evoItem}` : condition})`);
 								break;
 							default:
-								evos.push(`${name} (${evo.evoLevel}${condition})`);
+								evos.push(`${name} (${evo.evoLevel!}${condition})`);
 							}
 						}
 					}
@@ -833,7 +835,7 @@ export const commands: Chat.ChatCommands = {
 							const boost = move.zMove.boost;
 							let h: BoostID;
 							for (h in boost) {
-								details[TL`Z-Effect`] += ` ${TL.statMedium[h] || h} +${boost[h]}`;
+								details[TL`Z-Effect`] += ` ${TL.statMedium[h] || h} +${boost[h]!}`;
 							}
 						} else if (move.isZ && typeof move.isZ === 'string') {
 							details[`&#10003; ${TL.tag.zmove}`] = "";

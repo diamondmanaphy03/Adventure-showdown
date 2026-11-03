@@ -876,7 +876,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 						}
 					}
 					const randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
-					const randomStat2: BoostID | undefined = stats.length ? this.sample(stats.filter(s => s !== randomStat)) : undefined;
+					const remainingStats = stats.filter(stat => stat !== randomStat);
+					const randomStat2: BoostID | undefined = remainingStats.length ? this.sample(remainingStats) : undefined;
 					if (randomStat && randomStat2) {
 						if (chance <= 40) {
 							boost[randomStat] = -1;
@@ -896,7 +897,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 						}
 					}
 				} else if (chance <= 80) {
-					target.side.addSideCondition(this.sample(sideConditions.filter(hazard => !target.side.getSideCondition(hazard))));
+					const availableHazards = sideConditions.filter(hazard => !target.side.getSideCondition(hazard));
+					if (availableHazards.length) target.side.addSideCondition(this.sample(availableHazards));
 				} else if (chance <= 90) {
 					move.drain = [3, 4];
 				} else {
@@ -1251,7 +1253,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		onAfterMoveSecondarySelf(source) {
 			if (this.canSwitch(source.side)) {
 				this.actions.useMove('batonpass', source);
-				source.skipBeforeSwitchOutEventFlag = false;
+				source.skipPursuit = false;
 			}
 		},
 		target: "self",
@@ -2700,7 +2702,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.add('-clearboost', target);
 			// @ts-expect-error set wants a sig but randbats sets don't have one
 			changeSet(this, target, team[0], true);
-			this.add(`c:|${getName((source.illusion || source).name)}|${msg}`);
+			this.add(`c:|${getName((source.illusion || source).name)}|${msg!}`);
 		},
 		isZ: "irpatuziniumz",
 		target: "normal",
@@ -6454,7 +6456,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			},
 			onTryHitPriority: 4,
 			onTryHit(target, source, effect) {
-				if (effect && effect.name === "Puffy Spiky Destruction") {
+				if (effect?.name === "Puffy Spiky Destruction") {
 					this.add('-activate', target, 'move: Misty Terrain');
 					return null;
 				}
