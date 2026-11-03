@@ -1,5 +1,6 @@
 /config/*
 !/config/formats.ts
+/config/local-accounts.json
 !/config/config-example.js
 /logs/**/*
 /test/modlogs
