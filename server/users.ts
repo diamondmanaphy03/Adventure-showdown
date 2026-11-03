@@ -49,6 +49,7 @@ import { Utils, type ProcessManager } from '../lib';
 import {
 	Auth, GlobalAuth, PLAYER_SYMBOL, HOST_SYMBOL, type RoomPermission, type GlobalPermission,
 } from './user-groups';
+import * as LocalAccounts from './local-accounts';
 
 const MINUTES = 60 * 1000;
 const IDLE_TIMER = 60 * MINUTES;
@@ -638,6 +639,17 @@ export class User extends Chat.MessageContext {
 		}
 	}
 	async validateToken(token: string, name: string, userid: ID, connection: Connection) {
+		// Cuentas locales: los nombres registrados exigen contraseña
+		if (LocalAccounts.has(userid)) {
+			if (!token) {
+				this.send(`|nametaken|${name}|AUTH_REQUIRED`);
+				return null;
+			}
+			const result = LocalAccounts.verify(userid, token, connection.ip);
+			if (result === 'ok') return '2';
+			this.send(`|nametaken|${name}|AUTH_WRONG:${result === 'locked' ? 'Demasiados intentos. Espera unos minutos.' : 'Contraseña incorrecta.'}`);
+			return null;
+		}
 		if (!token && Config.noguestsecurity) {
 			if (Users.isTrusted(userid)) {
 				this.send(`|nametaken|${name}|You need an authentication token to log in as a trusted user.`);
