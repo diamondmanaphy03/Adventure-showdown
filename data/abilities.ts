@@ -1508,6 +1508,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.singleEvent('WeatherChange', this.effect, this.effectState, pokemon);
 		},
 		onWeatherChange(pokemon) {
+			// Indicador visual del boost (como Protosynthesis)
+			pokemon.removeVolatile('climadaptacion');
+			if (['raindance', 'primordialsea', 'sunnyday', 'desolateland', 'hail', 'snowscape', 'sandstorm']
+				.includes(pokemon.effectiveWeather())) {
+				pokemon.addVolatile('climadaptacion');
+			}
 			if (pokemon.baseSpecies.baseSpecies !== 'Meteoform' || pokemon.transformed) return;
 			let forme = null;
 			switch (pokemon.effectiveWeather()) {
@@ -1549,6 +1555,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					sandstorm: 'def',
 				};
 				this.effectState.stat = stats[pokemon.effectiveWeather()];
+				this.add('-activate', pokemon, 'ability: Climadaptacion');
 				this.add('-start', pokemon, 'climadaptacion' + this.effectState.stat);
 			},
 			onEnd(pokemon) {
