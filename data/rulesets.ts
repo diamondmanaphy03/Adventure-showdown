@@ -7,6 +7,35 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 
 	// Rulesets
 	///////////////////////////////////////////////////////////////////
+	insigniateam: {
+		effectType: 'ValidatorRule',
+		name: 'Insignia Team',
+		desc: "Cada jugador elige un único Pokémon (su insignia); los otros se generan al azar al empezar el combate.",
+		onValidateTeam(team) {
+			if (team.length !== 1) {
+				return [`Este formato requiere un equipo de exactamente 1 Pokémon (el tuyo tiene ${team.length}).`];
+			}
+		},
+	},
+	bergaligabans: {
+		effectType: 'ValidatorRule',
+		name: 'Bergaliga Bans',
+		desc: "Pokémon, habilidades, objetos y movimientos que no se pueden usar en la Bergaliga.",
+		banlist: [
+			'Restricted Legendary', 'Mythical', 'Sub-Legendary', 'Flutter Mane', 'Shedinja', 'Walking Wake', 'Gouging Fire', 'Raging Bolt',
+			'Iron Leaves', 'Iron Boulder', 'Iron Crown', 'Shadow Tag', 'Arena Trap', 'Commander', 'Venusaurite', 'Charizardite X',
+			'Charizardite Y', 'Blastoisinite', 'Alakazite', 'Gengarite', 'Kangaskhanite', 'Pinsirite', 'Gyaradosite', 'Aerodactylite',
+			'Mewtwonite X', 'Mewtwonite Y', 'Ampharosite', 'Scizorite', 'Heracronite', 'Houndoominite', 'Tyranitarite', 'Blazikenite', 
+			'Gardevoirite', 'Mawilite', 'Aggronite', 'Medichamite', 'Manectite', 'Banettite', 'Absolite', 'Garchompite', 'Lucarionite', 
+			'Abomasite', 'Beedrillite', 'Pidgeotite', 'Slowbronite', 'Steelixite', 'Sceptilite', 'Swampertite', 'Sablenite', 'Sharpedonite', 
+			'Cameruptite', 'Altarianite', 'Glalitite', 'Salamencite', 'Metagrossite', 'Lopunnite', 'Galladite', 'Audinite'
+		],
+		unbanlist: ['Future', 'froslassite', 'absolitez', 'barbaracite', 'baxcalibrite', 'chandelurite',
+			'chesnaughtite', 'chimechite', 'clefablite', 'crabominite', 'delphoxite', 'dragalgite', 'dragoninite', 'drampanite', 'eelektrossite',
+			'emboarite', 'excadrite', 'falinksite', 'feraligite', 'garchompitez', 'glimmoranite', 'golisopite', 'golurkite', 'greninjite',
+			'hawluchanite', 'lucarionitez', 'malamarite', 'meganiumite', 'meowsticite', 'pyroarite', 'raichunitex', 'raichunitey', 'scolipite',
+			'scovillainite', 'scraftinite', 'skarmorite', 'staraptite', 'starminite', 'victreebelite'],
+	},
 	bergaligalittlecup: {
 		effectType: 'ValidatorRule',
 		name: 'Bergaliga Little Cup',

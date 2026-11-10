@@ -1970,6 +1970,25 @@ export class RandomTeams {
 		return pokemon;
 	}
 
+	insigniaTeam(insignia: PokemonSet): PokemonSet[] {
+		// Especies que NO quieres que salgan entre los 5 aleatorios (ids en minúsculas, sin guiones)
+		const excluded: string[] = []; // por ejemplo: ['mewtwo', 'zaciancrowned']
+
+		let team: PokemonSet[];
+		let tries = 0;
+		do {
+			team = this.randomTeam() as unknown as PokemonSet[]; // equipo completo aleatorio
+		} while (++tries < 20 && team.some(s => excluded.includes(toID(s.species))));
+
+		const mine = this.dex.species.get(insignia.species);
+		// Quitamos uno para hacer hueco: primero el que repita especie base; si no, el último
+		let drop = team.findIndex(s => this.dex.species.get(s.species).baseSpecies === mine.baseSpecies);
+		if (drop < 0) drop = team.length - 1;
+		team.splice(drop, 1);
+		team.unshift(insignia);
+		return team;
+	}
+
 	randomCCTeam(): RandomTeamsTypes.RandomSet[] {
 		this.enforceNoDirectCustomBanlistChanges();
 
