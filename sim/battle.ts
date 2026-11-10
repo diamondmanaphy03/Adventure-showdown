@@ -3224,7 +3224,16 @@ export class Battle {
 	getTeam(options: PlayerOptions): PokemonSet[] {
 		let team = options.team;
 		if (typeof team === 'string') team = Teams.unpack(team);
-		if (team) return team;
+		if (team) {
+			// Formato Insignia: el equipo aportado se completa con Pokémon aleatorios
+			if (this.ruleTable.has('insigniateam') && team.length === 1) {
+				if (!options.seed) options.seed = this.prng.getSeed();
+				const generator = Teams.getGenerator(this.format, options.seed) as any;
+				return generator.insigniaTeam(team[0]);
+			}
+
+			return team;
+		}
 
 		if (!options.seed) {
 			options.seed = PRNG.generateSeed();
