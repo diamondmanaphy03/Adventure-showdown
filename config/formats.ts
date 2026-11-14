@@ -157,11 +157,10 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		//Los Pokemons sin línea evolutiva se desbanean en rulesets.ts porque si no, la regla de restricted y unban colisionan y predomina el unban (no se restringen)
 		restricted: ['Clamperl', 'Cutiefly', 'Drifloon', 'Flittle', 'Meditite', 'Porygon', 'Rufflet', 'Voltorb-Hisui', 'Woobat',
 			'Corsola','Pachirisu','Maractus','Dedenne','Morpeko','Squawkabilly', 'Delibird', 'Plusle', 'Minun', 'Spinda', 'Castform',
-			'Chatot', 'Emolga', 'Togedemaru'],
+			'Chatot', 'Emolga', 'Togedemaru','Aipom', 'Basculin-White-Striped','Corsola-Galar', 'Dunsparce','Gligar', 'Misdreavus', 'Murkrow', 'Qwilfish-Hisui', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
+			'Stantler', 'Swirlix', 'Tangela', 'Yanma', 'Zigzagoon-Base', 'Girafarig'],
 		banlist: [
-			'Shadow Tag', 'Arena Trap', 'Aipom', 'Basculin-White-Striped', 'Deep Sea Tooth', 'Corsola-Galar', 'Dunsparce', 'Duraludon', 'Girafarig',
-			'Gligar', 'Misdreavus', 'Murkrow', 'Qwilfish-Hisui', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
-			'Stantler', 'Swirlix', 'Tangela', 'Yanma', 'Zigzagoon-Base', 'Moody', 'Eevium Z', 'King\'s Rock',
+			'Shadow Tag', 'Arena Trap', 'Deep Sea Tooth', 'Duraludon', 'Moody', 'Eevium Z', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Aurora Veil', 'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Sticky Web', 'Stored Power'
 		],
 	},
@@ -173,11 +172,10 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		//Los Pokemons sin línea evolutiva se desbanean en rulesets.ts porque si no, la regla de restricted y unban colisionan y predomina el unban (no se restringen)
 		restricted: ['Clamperl', 'Cutiefly', 'Drifloon', 'Flittle', 'Meditite', 'Porygon', 'Rufflet', 'Voltorb-Hisui', 'Woobat',
 			'Corsola','Pachirisu','Maractus','Dedenne','Morpeko','Squawkabilly', 'Delibird', 'Plusle', 'Minun', 'Spinda', 'Castform',
-			'Chatot', 'Emolga', 'Togedemaru'],
+			'Chatot', 'Emolga', 'Togedemaru','Aipom', 'Basculin-White-Striped','Corsola-Galar', 'Dunsparce','Gligar', 'Misdreavus', 'Murkrow', 'Qwilfish-Hisui', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
+			'Stantler', 'Swirlix', 'Tangela', 'Yanma', 'Zigzagoon-Base', 'Girafarig'],
 		banlist: [
-			'Shadow Tag', 'Arena Trap', 'Aipom', 'Basculin-White-Striped', 'Deep Sea Tooth', 'Corsola-Galar', 'Dunsparce', 'Duraludon', 'Girafarig',
-			'Gligar', 'Misdreavus', 'Murkrow', 'Qwilfish-Hisui', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
-			'Stantler', 'Swirlix', 'Tangela', 'Yanma', 'Zigzagoon-Base', 'Moody', 'Eevium Z', 'King\'s Rock',
+			'Shadow Tag', 'Arena Trap', 'Deep Sea Tooth', 'Duraludon', 'Moody', 'Eevium Z', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Aurora Veil', 'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Sticky Web', 'Stored Power'
 		],
 	},
