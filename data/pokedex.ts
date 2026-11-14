@@ -21203,4 +21203,15 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredAbility: "Climadaptacion",
 		battleOnly: "Meteoform",
 	},
+	vladscore: {
+		num: -6002,
+		name: "Vladscore",
+		types: ["Flying", "Poison"],
+		baseStats: { hp: 85, atk: 105, def: 125, spa: 45, spd: 95, spe: 95 },
+		abilities: { 0: "Presencia Vampirica" },
+		heightm: 2,
+		weightkg: 42.5,
+		color: "Purple",
+		eggGroups: ["Bug"],
+	},
 };

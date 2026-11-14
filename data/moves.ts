@@ -21302,4 +21302,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Beautiful",
 	},
+	vampirismo: {
+		num: -1001,
+		accuracy: 100,
+		basePower: 50,
+		category: "Physical",
+		name: "Vampirismo",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, heal: 1, metronome: 1 },
+		drain: [1, 2],
+		secondary: {
+			chance: 100,
+			boosts: { def: -1 },
+		},
+		target: "normal",
+		type: "Flying",
+	},
 };

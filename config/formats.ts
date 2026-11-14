@@ -28,14 +28,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] ND Insignia Battle",
 		desc: "Individuales 6 vs 6: 5 Pokemon random y un Pokemon Insignia",
 		mod: 'gen9',
-		ruleset: ['Standard', 'Insignia Team', 'Bergaliga Bans' , 'Max Level = 82'],
+		ruleset: ['Standard NatDex', 'Insignia Team', 'Bergaliga Bans' , 'Max Level = 82', 'Z-Move Clause'],
 	},
 	{
 		name: "[Gen 9] ND Insignia Battle Doubles",
 		desc: "Dobles 6 vs 6: 5 Pokemon random y un Pokemon Insignia",
 		mod: 'gen9',
 		gameType: 'doubles',
-		ruleset: ['Standard', 'Insignia Team', 'Bergaliga Bans' , 'Max Level = 82'],
+		ruleset: ['Standard NatDex', 'Insignia Team', 'Bergaliga Bans' , 'Max Level = 82', 'Z-Move Clause'],
 	},
 	{
 		name: "[Gen 9] ND Bergaliga Single",

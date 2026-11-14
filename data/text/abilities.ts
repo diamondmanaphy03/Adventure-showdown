@@ -559,6 +559,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 			desc: "If this Pokemon is a Meteoform, its type changes to the current weather condition's type and gains a stat boost.",
 		},
 	},
+	presenciavampirica: {
+		name: "Presencia Vampirica",
+		shortDesc: "Al final del turno, drena el 6% de la vida máxima de cada rival y la cura.",
+		desc: "Al final de cada turno, este Pokémon absorbe el 6% de los PS máximos de cada rival y recupera esa misma cantidad.",
+	},
 	forewarn: {
 		name: "Forewarn",
 		desc: "On switch-in, this Pokemon is alerted to the move with the highest power, at random, known by an opposing Pokemon. This effect considers OHKO moves to have 150 power, Counter, Mirror Coat, and Metal Burst to have 120 power, every other attacking move with an unspecified power to have 80 power, and non-damaging moves to have 1 power.",

@@ -1502,84 +1502,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 59,
 	},
-	climadaptacion: {
-		onSwitchInPriority: -2,
-		onStart(pokemon) {
-			this.singleEvent('WeatherChange', this.effect, this.effectState, pokemon);
-		},
-		onWeatherChange(pokemon) {
-			// Indicador visual del boost (como Protosynthesis)
-			pokemon.removeVolatile('climadaptacion');
-			if (['raindance', 'primordialsea', 'sunnyday', 'desolateland', 'hail', 'snowscape', 'sandstorm']
-				.includes(pokemon.effectiveWeather())) {
-				pokemon.addVolatile('climadaptacion');
-			}
-			if (pokemon.baseSpecies.baseSpecies !== 'Meteoform' || pokemon.transformed) return;
-			let forme = null;
-			switch (pokemon.effectiveWeather()) {
-			case 'sunnyday':
-			case 'desolateland':
-				if (pokemon.species.id !== 'meteoformsunny') forme = 'Meteoform-Sunny';
-				break;
-			case 'raindance':
-			case 'primordialsea':
-				if (pokemon.species.id !== 'meteoformrainy') forme = 'Meteoform-Rainy';
-				break;
-			case 'hail':
-			case 'snowscape':
-				if (pokemon.species.id !== 'meteoformsnowy') forme = 'Meteoform-Snowy';
-				break;
-			case 'sandstorm':
-				if (pokemon.species.id !== 'meteoformsandy') forme = 'Meteoform-Sandy';
-				break;
-			default:
-				if (pokemon.species.id !== 'meteoform') forme = 'Meteoform';
-				break;
-			}
-			if (pokemon.isActive && forme) {
-				pokemon.formeChange(forme, this.effect, false, '0', '[msg]');
-			}
-		},
-
-		onEnd(pokemon) {
-			pokemon.removeVolatile('climadaptacion');
-		},
-
-		condition: {
-			noCopy: true,
-			onStart(pokemon) {
-				const stats: {[k: string]: string} = {
-					raindance: 'spe', primordialsea: 'spe',
-					sunnyday: 'spa', desolateland: 'spa',
-					hail: 'spd', snowscape: 'spd',
-					sandstorm: 'def',
-				};
-				this.effectState.stat = stats[pokemon.effectiveWeather()];
-				this.add('-activate', pokemon, 'ability: Climadaptacion');
-				this.add('-start', pokemon, 'climadaptacion' + this.effectState.stat);
-			},
-			onEnd(pokemon) {
-				this.add('-end', pokemon, 'climadaptacion' + this.effectState.stat);
-			},
-		},
-
-		onModifySpe(spe, pokemon) {
-		if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) return this.chainModify(1.5);
-		},
-		onModifySpA(spa, pokemon) {
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) return this.chainModify(1.5);
-		},
-		onModifySpD(spd, pokemon) {
-			if (['hail', 'snowscape'].includes(pokemon.effectiveWeather())) return this.chainModify(1.5);
-		},
-		onModifyDef(def, pokemon) {
-			if (pokemon.effectiveWeather() === 'sandstorm') return this.chainModify(1.5);
-		},
-		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1 },
-		name: "Climadaptacion",
-		rating: 3,
-		num: -601,
-	},
 	forewarn: {
 		onStart(pokemon) {
 			let warnMoves: (Move | Pokemon)[][] = [];
@@ -5792,5 +5714,100 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Regresion Primigenia",
 		rating: 4.5,
 		num: -100,
+	},
+	climadaptacion: {
+		onSwitchInPriority: -2,
+		onStart(pokemon) {
+			this.singleEvent('WeatherChange', this.effect, this.effectState, pokemon);
+		},
+		onWeatherChange(pokemon) {
+			// Indicador visual del boost (como Protosynthesis)
+			pokemon.removeVolatile('climadaptacion');
+			if (['raindance', 'primordialsea', 'sunnyday', 'desolateland', 'hail', 'snowscape', 'sandstorm']
+				.includes(pokemon.effectiveWeather())) {
+				pokemon.addVolatile('climadaptacion');
+			}
+			if (pokemon.baseSpecies.baseSpecies !== 'Meteoform' || pokemon.transformed) return;
+			let forme = null;
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				if (pokemon.species.id !== 'meteoformsunny') forme = 'Meteoform-Sunny';
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				if (pokemon.species.id !== 'meteoformrainy') forme = 'Meteoform-Rainy';
+				break;
+			case 'hail':
+			case 'snowscape':
+				if (pokemon.species.id !== 'meteoformsnowy') forme = 'Meteoform-Snowy';
+				break;
+			case 'sandstorm':
+				if (pokemon.species.id !== 'meteoformsandy') forme = 'Meteoform-Sandy';
+				break;
+			default:
+				if (pokemon.species.id !== 'meteoform') forme = 'Meteoform';
+				break;
+			}
+			if (pokemon.isActive && forme) {
+				pokemon.formeChange(forme, this.effect, false, '0', '[msg]');
+			}
+		},
+
+		onEnd(pokemon) {
+			pokemon.removeVolatile('climadaptacion');
+		},
+
+		condition: {
+			noCopy: true,
+			onStart(pokemon) {
+				const stats: {[k: string]: string} = {
+					raindance: 'spe', primordialsea: 'spe',
+					sunnyday: 'spa', desolateland: 'spa',
+					hail: 'spd', snowscape: 'spd',
+					sandstorm: 'def',
+				};
+				this.effectState.stat = stats[pokemon.effectiveWeather()];
+				this.add('-activate', pokemon, 'ability: Climadaptacion');
+				this.add('-start', pokemon, 'climadaptacion' + this.effectState.stat);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'climadaptacion' + this.effectState.stat);
+			},
+		},
+
+		onModifySpe(spe, pokemon) {
+		if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) return this.chainModify(1.5);
+		},
+		onModifySpA(spa, pokemon) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) return this.chainModify(1.5);
+		},
+		onModifySpD(spd, pokemon) {
+			if (['hail', 'snowscape'].includes(pokemon.effectiveWeather())) return this.chainModify(1.5);
+		},
+		onModifyDef(def, pokemon) {
+			if (pokemon.effectiveWeather() === 'sandstorm') return this.chainModify(1.5);
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1 },
+		name: "Climadaptacion",
+		rating: 3,
+		num: -601,
+	},
+	presenciavampirica: {
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (!pokemon.hp) return;
+			for (const foe of pokemon.foes()) {
+				if (!foe.hp) continue;
+				const amount = Math.max(1, Math.floor(foe.baseMaxhp * 6 / 100));
+				const dealt = this.damage(amount, foe, pokemon, this.effect);
+				if (dealt) this.heal(dealt, pokemon, foe, this.effect);
+			}
+		},
+		flags: {},
+		name: "Presencia Vampirica",
+		rating: 3,
+		num: -602,
 	},
 };

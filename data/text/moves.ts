@@ -7714,4 +7714,9 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 			shortDesc: "Nearly always goes first. Always crits.",
 		},
 	},
+	vampirismo: {
+		name: "Vampirismo",
+		shortDesc: "Drena el 50% del daño. Baja 1 la Defensa del objetivo.",
+		desc: "Tiene 100% de probabilidad de bajar un nivel la Defensa del objetivo. El usuario recupera el 50% del daño causado.",
+	},
 };
