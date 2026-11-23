@@ -19,10 +19,10 @@ The column value will be ignored for repeat sections.
 
 export const Formats: import('../sim/dex-formats').FormatList = [
 
-	// Custom formats Proyecto Profesor
+	// Custom formats Proyecto Bergastadium
 	///////////////////////////////////////////////////////////////////
 	{
-		section: "Prof",
+		section: "Bergastadium",
 	},
 	{
 		name: "[Gen 9] ND Insignia Battle",
@@ -41,7 +41,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] ND Bergaliga Single",
 		desc: "Individuales con restricciones de la Bergaliga",
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Bergaliga Bans'],
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Bergaliga Bans', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
@@ -49,7 +49,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		desc: "Dobles 6 vs 6 con restricciones de la Bergaliga",
 		mod: 'gen9',
 		gameType: 'doubles',
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
@@ -64,7 +64,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] ND Super Effective",
 		desc: "All damaging moves are super effective!",
 		mod: 'supereffective',
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Super Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Super Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
@@ -72,14 +72,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		desc: "All damaging moves are super effective!",
 		mod: 'supereffective',
 		gameType: 'doubles',
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Super Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Super Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
 		name: "[Gen 9] ND No Effectiveness",
 		desc: "All damaging moves are normal effective!",
 		mod: 'noeffectivenes',
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'No Effectiveness Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'No Effectiveness Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
@@ -87,14 +87,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		desc: "All damaging moves are normal effective!",
 		mod: 'noeffectivenes',
 		gameType: 'doubles',
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'No Effectiveness Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'No Effectiveness Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
 		name: "[Gen 9] ND Not Very Effective",
 		desc: "All damaging moves are not very effective!",
 		mod: 'notveryeffective', 
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Not Very Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Not Very Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
@@ -102,14 +102,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		desc: "All damaging moves are not very effective!",
 		mod: 'notveryeffective', 
 		gameType: 'doubles',
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Not Very Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Not Very Effective Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 2', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
 		name: "[Gen 9] ND Metronome Force",
 		desc: "Each Pokémon must use Metronome on their first turn after entering the field.",
 		mod: 'metronomeforce',  
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Metronome Force Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Metronome Force Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
@@ -117,14 +117,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		desc: "Each Pokémon must use Metronome on their first turn after entering the field.",
 		mod: 'metronomeforce',  
 		gameType: 'doubles',
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Metronome Force Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Metronome Force Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
 		name: "[Gen 9] ND Full Metronome",
 		desc: "Each Pokémon must use Metronome always.",
 		mod: 'fullmetronome',  
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Full Metronome Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 3'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Full Metronome Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 3', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
@@ -132,14 +132,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		desc: "Each Pokémon must use Metronome always.",
 		mod: 'fullmetronome',  
 		gameType: 'doubles',
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Full Metronome Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 4'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Full Metronome Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Picked Team Size = 4', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
 		name: "[Gen 9] ND Metronome Force Easy",
 		desc: "Each Pokémon must use Metronome once, the first time it enters the field.",
 		mod: 'metronomeforceeasy',  
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Metronome Force Easy Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Metronome Force Easy Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
@@ -147,18 +147,18 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		desc: "Each Pokémon must use Metronome once, the first time it enters the field.",
 		mod: 'metronomeforceeasy',  
 		gameType: 'doubles',
-		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Metronome Force Easy Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		ruleset: ['Bergaliga Bans', 'Standard NatDex', 'Metronome Force Easy Mod', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Adjust Level = 100'],
 		restricted: ['Bergaliga'],
 	},
 	{
 		name: "[Gen 9] ND Bergaliga LC",
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'Bergaliga Little Cup', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		ruleset: ['Standard NatDex', 'Bergaliga Little Cup', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Adjust Level = 100'],
 		//Los Pokemons sin línea evolutiva se desbanean en rulesets.ts porque si no, la regla de restricted y unban colisionan y predomina el unban (no se restringen)
 		restricted: ['Clamperl', 'Cutiefly', 'Drifloon', 'Flittle', 'Meditite', 'Porygon', 'Rufflet', 'Voltorb-Hisui', 'Woobat',
 			'Corsola','Pachirisu','Maractus','Dedenne','Morpeko','Squawkabilly', 'Delibird', 'Plusle', 'Minun', 'Spinda', 'Castform',
 			'Chatot', 'Emolga', 'Togedemaru','Aipom', 'Basculin-White-Striped','Corsola-Galar', 'Dunsparce','Gligar', 'Misdreavus', 'Murkrow', 'Qwilfish-Hisui', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
-			'Stantler', 'Swirlix', 'Tangela', 'Yanma', 'Zigzagoon-Base', 'Girafarig'],
+			'Stantler', 'Swirlix', 'Tangela', 'Yanma', 'Zigzagoon-Base', 'Girafarig', 'Poipole',],
 		banlist: [
 			'Shadow Tag', 'Arena Trap', 'Deep Sea Tooth', 'Duraludon', 'Moody', 'Eevium Z', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Aurora Veil', 'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Sticky Web', 'Stored Power'
@@ -168,12 +168,12 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] ND Bergaliga LC Doubles",
 		mod: 'gen9',
 		gameType: 'doubles',
-		ruleset: ['Standard NatDex', 'Bergaliga Little Cup', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted'],
+		ruleset: ['Standard NatDex', 'Bergaliga Little Cup', 'Terastal Clause', 'Z-Move Clause', 'Limit Two Restricted', 'Adjust Level = 100'],
 		//Los Pokemons sin línea evolutiva se desbanean en rulesets.ts porque si no, la regla de restricted y unban colisionan y predomina el unban (no se restringen)
 		restricted: ['Clamperl', 'Cutiefly', 'Drifloon', 'Flittle', 'Meditite', 'Porygon', 'Rufflet', 'Voltorb-Hisui', 'Woobat',
 			'Corsola','Pachirisu','Maractus','Dedenne','Morpeko','Squawkabilly', 'Delibird', 'Plusle', 'Minun', 'Spinda', 'Castform',
 			'Chatot', 'Emolga', 'Togedemaru','Aipom', 'Basculin-White-Striped','Corsola-Galar', 'Dunsparce','Gligar', 'Misdreavus', 'Murkrow', 'Qwilfish-Hisui', 'Scraggy', 'Scyther', 'Sneasel', 'Sneasel-Hisui',
-			'Stantler', 'Swirlix', 'Tangela', 'Yanma', 'Zigzagoon-Base', 'Girafarig'],
+			'Stantler', 'Swirlix', 'Tangela', 'Yanma', 'Zigzagoon-Base', 'Girafarig', 'Poipole'],
 		banlist: [
 			'Shadow Tag', 'Arena Trap', 'Deep Sea Tooth', 'Duraludon', 'Moody', 'Eevium Z', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Aurora Veil', 'Baton Pass', 'Dragon Rage', 'Sonic Boom', 'Sticky Web', 'Stored Power'

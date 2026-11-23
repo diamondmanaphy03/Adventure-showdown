@@ -46,7 +46,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			const noEvoAllowed = [
 			'Corsola', 'Pachirisu', 'Maractus', 'Dedenne', 'Morpeko', 'Squawkabilly', 'Delibird',
 			'Plusle', 'Minun', 'Spinda', 'Castform', 'Chatot', 'Emolga', 'Togedemaru', 'Luvdisc', 
-			'Piplup-Sleepy',
+			'Piplup-Sleepy', 'Poipole',
 		].map(this.toID);
 			if (noEvoAllowed.includes(species.id) || noEvoAllowed.includes(this.toID(species.baseSpecies))) return;
 			if (species.prevo && this.dex.species.get(species.prevo).gen <= this.gen) {
